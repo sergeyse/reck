@@ -1,0 +1,74 @@
+<ion-view view-title="Saga">
+  <ion-content style="padding-left: 50px;padding-right: 50px">
+  <label class="item item-input">
+    Leita eftir rekka numeri:&nbsp
+    <input type="number" placeholder=" Sla numer" ng-model="order.rack">
+</label>
+<!--    <ion-list>
+      <ion-item ng-repeat="o in historyRecs|filter:query" href="#/app/">
+       <pre>
+       	Rack {{o.rack}} var lanad {{o.lendOutTime}} til name {{o.name}} skradur heima  {{o.comeHomeTime}} 
+       </pre> 
+      </ion-item>
+    </ion-list>-->
+      <div id="wrapper">
+          <div id="scroll">
+
+              <table class="table table-bordered " >
+                  <thead style="font-size:1.5em">
+                  <tr>
+                      <th><a ng-click="predicate = 'rack'; reverse=!reverse">
+                          Rekka Numer</a>
+                      </th>
+                      <th>
+                          Nafn
+                      </th>
+                      <th>
+                          Siminn
+                      </th>
+                      <th><a ng-click="predicate = 'delivaddress'; reverse=!reverse">
+                          Afhendingastadur
+                      </a>
+
+                      </th>
+                      <th>
+                          Afhendingarsiminn
+                      </th>
+                      <th>
+                          ATH
+                      </th>
+                      <th>
+                          <a ng-click="predicate = 'lendOutTime'; reverse=!reverse">
+                              Dagsetning ut </a>
+                      </th>
+                      <th>
+                          <a ng-click="predicate = 'comeHomeTime'; reverse=!reverse">
+                              Dagsetning inn </a>
+                      </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                 
+                  <tr ng-repeat="order in historyRecs|orderBy:predicate:reverse|filter:order">
+                      <td >{{order.rack}}</td>
+                      <td>{{order.name}}</td>
+                      <td>{{order.phone}}</td>
+                      <td>{{order.delivaddress}}</td>
+                      <td>{{order.delivphone}}</td>
+                      <td>
+                          <input type="text" ng-model="order.ath" ng-change ="orders.$save(order)">
+                      </td>
+                      <td>
+                          {{order.lendOutTime}}
+                      </td>
+                      <td>
+                          {{order.comeHomeTime}}
+                      </td>
+                  </tr>
+                  
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

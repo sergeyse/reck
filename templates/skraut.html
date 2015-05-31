@@ -1,0 +1,54 @@
+<ion-modal-view>
+<ion-header-bar>
+<h1 class="title">Skra ut lanad rekka n {{order.rack}}</h1>
+<div class="buttons">
+    <button class="button button-clear" ng-click="closeUt()">Close</button>
+</div>
+</ion-header-bar>
+<ion-content >
+<!-- <form ng-submit="doSkraUt()"> -->
+<form >
+    <ion-spinner icon="spiral" ng-show="spinner"></ion-spinner>
+    <div class="list">
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Pontunar numer:</span>
+            <input type="number" placeholder="Pontunar numer:" ng-model="order.number">
+        </label>
+        <button class="button  button-balanced" ng-click="fetch()">Saekja upplysingar</button>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Nafn:</span>
+            <input type="text" placeholder="Nafn" ng-model="order.name">
+        </label>
+        <label class="item item-input  item-floating-label">
+            <span class="input-label">Heimilisfang:</span>
+            <input type="text" placeholder="Heimilisfang" ng-model="order.address">
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Siminn:</span>
+            <input type="text" placeholder="Siminn:" ng-model="order.phone">
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Sendinga heimilisfang:</span>
+            <input type="text" placeholder="Sendinga heimilisfang:" ng-model="order.delivaddress">
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Sendinga siminn:</span>
+            <input type="text" placeholder="Sendinga siminn" ng-model="order.delivphone">
+        </label>
+       <label class="item item-input item-select">
+    <div class="input-label">
+      Type of rent
+    </div>
+    <select ng-model="order.rType">
+      <option  value="keyrsla" selected>Ut Keyrsla</option>
+      <option value="lanad">Lanad</option>
+      <option value="leiga">Ut leiga</option>
+    </select>
+  </label>
+        <label class="item">
+            <button class="button button-block button-positive" ng-click ="doSkraUt()" >Scra</button>
+        </label>
+    </div>
+</form>
+</ion-content>
+</ion-modal-view>

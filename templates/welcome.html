@@ -1,0 +1,18 @@
+<ion-view view-title="Velcomin/nn">
+<ion-content >
+<h1>Vinsamlegast  skraid backend IP og skraid ykkar </h1>
+
+    <form >
+
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">IP address of a REST server:</span>
+                <input type="text" placeholder="IP here :" ng-model="data.ip">
+            </label>
+            <button class="button  button-balanced" ng-click="setRest()">Skr</button>
+
+        </div>
+    </form>
+{{ data.ip }}
+</ion-content>
+</ion-view> 

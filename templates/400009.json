@@ -1,0 +1,19 @@
+{
+  "_embedded" : {
+    "orders" : [ {
+      "name" : "GUNNAR JÓHANNESSON",
+      "address" : "GOÐASÖLUM 3",
+      "delivaddress" : "Breiðholt ",
+      "delivPhone" : "898 4750",
+      "phone" : "898 4750",
+      "deliverypostn" : 111,
+      "note1" : "lætur vita hvert á að senda ",
+      "note2" : "áminning 15/7 - 25.8 hringt ",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/orders/400009"
+        }
+      }
+    } ]
+  }
+}

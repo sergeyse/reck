@@ -1,0 +1,32 @@
+<ion-view view-title="Rekkar heima ">
+<ion-content style="padding-left: 50px;padding-right: 50px">
+
+  <label class="item item-input">
+    Leita eftir rekka numeri:&nbsp
+    <input type="number" placeholder=" Sla numer" ng-model="query.rack">
+</label>
+
+
+<!--  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Sla Numer " gn-model="query.rack">
+    </label>
+    <button class="button button-small assertive">
+      Eyda
+    </button>
+  </div>
+  {{query.rack}} -->
+<button class="button button-icon icon ion-ios-minus-outline"
+ng-click="data.showDelete = !data.showDelete"></button>
+<ion-list show-delete="data.showDelete">
+<ion-item  ng-hide="order.lendOut" ng-repeat="order in orders|filter:query" href="#/app/" class="item-remove-animate">
+<ion-delete-button class="ion-minus-circled"
+ng-click="onItemDelete(order)">
+</ion-delete-button>
+       <pre>
+       Rack {{order.rack}}  skradur heima  {{order.comeHomeTime}}
+</pre>
+</ion-item>
+</ion-list>
+</ion-content>
+</ion-view>

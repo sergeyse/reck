@@ -1,0 +1,32 @@
+/* Empty. Add your own CSS if you like */
+
+/*table scroll wrapper */
+#wrapper {
+	position: relative;
+}
+#scroll{
+	height:60%; /*might need to use pixels*/
+	overflow: auto;
+	margin-top: 20px;
+}
+/*#table-wrapper table {
+  width:100%;
+    
+}
+#table-wrapper table * {
+  background:yellow;
+  color:black;
+}
+#table-wrapper table thead th .text {
+  position:absolute;   
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}*/
+/*
+ion-content {
+    padding-left: 50px;
+    padding-right: 50px
+}*/
