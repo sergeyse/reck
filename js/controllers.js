@@ -42,7 +42,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
     };
 
-}).controller('UtCtrl', function($scope, $ionicModal, $http, $firebaseArray, fireURL, $filter, $firebaseObject, $timeout,currentAuth) {
+}).controller('UtCtrl', function($scope, $ionicModal, $http, $firebaseArray, fireURL, $filter, $firebaseObject, $timeout,currentAuth ,$ionicPopup) {
     console.log("autorisation "+ currentAuth);
 
 
@@ -114,6 +114,23 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         $scope.closeUt();
         $scope.order = {};
     };
+    //----- using popup for a confirm 
+       $scope.showConfirm = function(){
+           var confirmPopup = $ionicPopup.confirm(
+           {
+            title:'Skrá rekkan inn',
+            template: 'Yttu  á OK ef þið viljið skrá rekka inn'
+           }); 
+           confirmPopup.then(function(res){
+            if(res){
+                $scope.recIn();
+                $scope.order = {};
+            }else {
+                console.log('cancel');
+            }
+           });  
+        };
+
     $scope.recIn = function() {
         for (var i = 0; i < $scope.orders.length; i++) {
             if ($scope.orders[i].rack === $scope.order.rack) {
@@ -133,7 +150,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
             console.log("added a new rec to come home" + ref.key());
         });
 
-        alert("Rekki "+ $scope.order.rack+ " hefur veri")
+        
     $scope.order = {};
     }
 }).controller('HeimaCtrl', function($scope, $firebaseArray,fireURL) {
