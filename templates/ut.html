@@ -21,6 +21,15 @@
 
 
 <p></p>
+<!-- <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input ng-model="rack" type="search" placeholder="Leita rekka ">
+  </label>
+  <button class="button button-clear">
+    Cancel
+  </button>
+</div> -->
 <!-- see this for scroll overflow http://jsfiddle.net/sergeyse/7awekdaf/ -->
 <!-- <div id="wrapper">
     <div id="scroll"> -->
@@ -32,7 +41,8 @@
                         Rn.</a>
                     </th>
                     <th>
-                        Nafn
+                    <a ng-click="predicate = 'name'; reverse=!reverse">
+                        Nafn</a>
                     </th>
                     <th>
                         Síminn
@@ -42,8 +52,8 @@
                         </a>
 
                     </th>
-                    <th>
-                        Póst N.
+                    <th><a ng-click="predicate = 'postN'; reverse=!reverse">
+                        Póst N.</a>
                     </th>
                     <th>
                         Afh. síminn
@@ -62,7 +72,7 @@
             </thead>
             <tbody>
           
-                <tr ng-show="order.lendOut"ng-repeat="order in orders |orderBy:predicate:reverse">
+                <tr ng-show="order.lendOut"ng-repeat="order in orders | filter:rack| orderBy:predicate:reverse ">
                     <td >{{order.rack}}</td>
                     <td>{{order.name}}</td>
                     <td>{{order.phone}}</td>

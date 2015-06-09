@@ -1,8 +1,8 @@
 <ion-modal-view>
 <ion-header-bar>
-<h1 class="title">Skra ut lanad rekka {{order.rack}}</h1>
+<h1 class="title">Skrá út lánað rekka {{order.rack}}</h1>
 <div class="buttons">
-    <button class="button button-clear" ng-click="closeUt()">Close</button>
+    <button class="button button-clear" ng-click="closeUt()">Loka</button>
 </div>
 </ion-header-bar>
 <ion-content >
@@ -14,19 +14,19 @@
             <span class="input-label">Pontunar numer:</span>
             <input type="number" placeholder="Pontunar numer:" ng-model="order.number">
         </label>
-        <button class="button  button-balanced" ng-click="fetch()">Saekja upplysingar</button>
+        <button class="button  button-balanced" ng-click="fetch()">Sækja upplysingar</button>
         <label class="item item-input item-floating-label">
             <span class="input-label">Nafn:</span>
             <input type="text" placeholder="Nafn" ng-model="order.name">
         </label>
-        <label class="item item-input  item-floating-label">
+      <!--   <label class="item item-input  item-floating-label">
             <span class="input-label">Heimilisfang:</span>
             <input type="text" placeholder="Heimilisfang" ng-model="order.address">
         </label>
         <label class="item item-input item-floating-label">
             <span class="input-label">Siminn:</span>
             <input type="text" placeholder="Siminn:" ng-model="order.phone">
-        </label>
+        </label> -->
         <label class="item item-input item-floating-label">
             <span class="input-label">Sendinga heimilisfang:</span>
             <input type="text" placeholder="Sendinga heimilisfang:" ng-model="order.delivaddress">
@@ -37,16 +37,16 @@
         </label>
        <label class="item item-input item-select">
     <div class="input-label">
-      Type of rent
+      Type of rent:
     </div>
     <select ng-model="order.rType">
-      <option  value="keyrsla" selected>Ut Keyrsla</option>
-      <option value="lanad">Lanad</option>
-      <option value="leiga">Ut leiga</option>
+      <option  value="keyrsla" style= "font-size : 2em"selected> Út Keyrsla </option>
+      <option value="lanad" style= "font-size : 2em"> Lánað </option>
+      <option value="leiga" style= "font-size : 2em"> Út leiga </option>
     </select>
   </label>
         <label class="item">
-            <button class="button button-block button-positive" ng-click ="doSkraUt()" >Scra</button>
+            <button class="button button-block button-positive" ng-click ="doSkraUt()" >Scrá Út </button>
         </label>
     </div>
 </form>

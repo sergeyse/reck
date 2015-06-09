@@ -3,7 +3,7 @@
 
   <label class="item item-input">
     Leita eftir rekka numeri:&nbsp
-    <input type="number" placeholder=" Sla numer" ng-model="query.rack">
+    <input type="number" placeholder=" Slá numer" ng-model="query.rack">
 </label>
 
 
@@ -19,7 +19,7 @@
 <button class="button button-icon icon ion-ios-minus-outline"
 ng-click="data.showDelete = !data.showDelete"></button>
 <ion-list show-delete="data.showDelete">
-<ion-item  ng-hide="order.lendOut" ng-repeat="order in orders|filter:query" href="#/app/" class="item-remove-animate">
+<ion-item  ng-hide="order.lendOut" ng-repeat="order in orders|filter:query:true" href="#/app/" class="item-remove-animate">
 <ion-delete-button class="ion-minus-circled"
 ng-click="onItemDelete(order)">
 </ion-delete-button>
