@@ -92,6 +92,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         $scope.spinner = false;
     };
     $scope.doSkraUt = function() {
+        console.log("in skraut");
         //here we write to a firebase 
         $scope.order.lendOutTime = $filter("date")(Date.now(), 'yyyy-MM-dd');
         if ($scope.orders) {

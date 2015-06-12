@@ -7,12 +7,12 @@
 </ion-header-bar>
 <ion-content >
 <!-- <form ng-submit="doSkraUt()"> -->
-<form >
+<form  name="outForm" novalidate=""  >
     <ion-spinner icon="spiral" ng-show="spinner"></ion-spinner>
     <div class="list">
         <label class="item item-input item-floating-label">
             <span class="input-label">Pontunar numer:</span>
-            <input type="number" placeholder="Pontunar numer:" ng-model="order.number">
+            <input type="number" placeholder="Pontunar numer:" ng-model="order.number" required>
         </label>
         <button class="button  button-balanced" ng-click="fetch()">Sækja upplysingar</button>
         <label class="item item-input item-floating-label">
@@ -46,7 +46,8 @@
     </select>
   </label>
         <label class="item">
-            <button class="button button-block button-positive" ng-click ="doSkraUt()" >Scrá Út </button>
+            <!-- <button class="button button-block button-positive" ng-click ="doSkraUt()" >Scrá Út </button> -->
+              <button class="button button-block button-positive" ng-click="doSkraUt()" ng-disabled="outForm.$invalid || outForm.$pristine">Scrá Út </button>        
         </label>
     </div>
 </form>
