@@ -44,7 +44,12 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
 }).controller('UtCtrl', function($scope, $ionicModal, $http, $firebaseArray, fireURL, $filter, $firebaseObject, $timeout,currentAuth ,$ionicPopup) {
     console.log("autorisation "+ currentAuth);
-
+   $scope.exceptEmptyComparator = function (actual, expected) {
+    if (!expected) {
+       return true;
+    }
+    return angular.equals(expected, actual);
+}
 
     var orderHistory = new Firebase(fireURL + "history/");
     $scope.historyOrders = $firebaseArray(orderHistory);
@@ -155,6 +160,15 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.order = {};
     }
 }).controller('HeimaCtrl', function($scope, $firebaseArray,fireURL) {
+
+    //-empty comparator filter fix ------
+$scope.exceptEmptyComparator = function (actual, expected) {
+    if (!expected) {
+       return true;
+    }
+    return angular.equals(expected, actual);
+}
+
   var homeList = new Firebase(fireURL + "home/");
     $scope.orders = $firebaseArray(homeList);
     $scope.data ={

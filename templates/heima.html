@@ -19,7 +19,7 @@
 <button class="button button-icon icon ion-ios-minus-outline"
 ng-click="data.showDelete = !data.showDelete"></button>
 <ion-list show-delete="data.showDelete">
-<ion-item  ng-hide="order.lendOut" ng-repeat="order in orders|filter:query:true" href="#/app/" class="item-remove-animate">
+<ion-item  ng-hide="order.lendOut" ng-repeat="order in orders|filter:query:exceptEmptyComparator" href="#/app/" class="item-remove-animate">
 <ion-delete-button class="ion-minus-circled"
 ng-click="onItemDelete(order)">
 </ion-delete-button>
